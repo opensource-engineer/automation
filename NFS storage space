@@ -1,0 +1,10 @@
+#!/usr/bin/python
+import os, sys
+import subprocess
+cmd = 'df -h | grep 172.25.72.31'
+server = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+output =server.communicate()
+result= str(output)
+s = result.split()
+print("The mount point is :"), s[0]
+print ("The storage used percentage is"), s[4]
